@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante LA LOCURA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Botón Flotante de Modo Oscuro -->
+    <button id="btnTema" class="btn-tema">🌙</button>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <img src="logo_mostaza.jpg" alt="Logo Mostaza" class="header-logo">
+        <h1>MOSTAZA</h1>
+        <p>Comidas Rápidas - Sabor Inigualable</p>
+    </header>
+
+    <div class="main-container">
+        <!-- Sección del Menú -->
+        <section class="menu-section">
+            <div id="contenedorProductos" class="grid-productos">
+                <!-- Aquí JS va a poner las tarjetas de comida -->
+            </div>
+        </section>
+
+        <!-- Sección del Carrito (Sticky Sidebar) -->
+        <aside class="cart-section">
+            <div class="cart-card">
+                <h2>🛒 Tu Pedido</h2>
+                <ul id="listaCarrito" class="cart-list">
+                    <li class="empty-msg">Tu carrito está vacío. ¡Antójate de algo! 😋</li>
+                </ul>
+
+                <div class="cart-summary">
+                    <div class="total-row">
+                        <span>Total a Pagar:</span>
+                        <span id="totalPrecio">$0</span>
+                    </div>
+                    <p class="payment-info">💵 Pago en efectivo contra entrega</p>
+
+                    <button id="btnCheckout" class="btn-checkout" disabled>Confirmar Pedido</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Modal para Datos del Cliente (Estilo Ticket) -->
+    <div id="modalCliente" class="modal hidden">
+        <div class="modal-content">
+            <div class="ticket-header">
+                <h2>MOSTAZA</h2>
+                <p>DATOS DE ENTREGA</p>
+            </div>
+
+            <div class="ticket-body">
+                <!-- Aquí inyectaremos el resumen del pedido -->
+                <div id="resumen-modal" class="order-summary">
+                    <!-- JS llenará esto -->
+                </div>
+
+                <form id="formPedido">
+                    <div class="form-group">
+                        <label>Tu Nombre</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="clienteNombre" placeholder="¿Quién recibe?" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📍</span>
+                            <input type="text" id="clienteDireccion" placeholder="Dirección exacta" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📞</span>
+                            <input type="tel" id="clienteTelefono" placeholder="Para llamar al llegar" required>
+                        </div>
+                    </div>
+
+                    <div class="modal-buttons">
+                        <button type="button" id="btnCancelar" class="btn-secondary">Volver</button>
+                        <button type="submit" class="btn-whatsapp">PEDIR YA! 🛵</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer con Redes Sociales -->
+    <footer class="footer">
+        <p class="footer-text">PARA MÁS PROMOCIONES:</p>
+        <a href="https://www.facebook.com/share/1KCD2EZ2AR/" target="_blank" class="footer-facebook">
+            <span class="facebook-icon">📘</span>
+            <span>Síguenos en Facebook</span>
+        </a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
